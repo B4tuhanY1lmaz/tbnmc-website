@@ -1,8 +1,9 @@
 import './globals.css'
-import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'}
 
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         />
         <div className='min-h-screen justify-center items-center sm:p-24 p-12'>
           {children}
+          <Analytics />
         </div>
         <Footer />
       </body>
