@@ -1,11 +1,21 @@
 "use client";
 
+import { redirect } from 'next/navigation'
 import Link from 'next/link';
 
 import ServerBox from '@/components/serverbox';
 import Cards from '@/components/card';
 
 export default function Home() {
+
+  function getCurrentURL() {
+    return window.location.origin
+  }
+
+  if (getCurrentURL !== "https://www.tbnmc.xyz") {
+    return redirect("https://www.tbnmc.xyz")
+  }
+
   return (
     <main className="flex flex-col gap-40 items-center">
       <div className='flex flex-wrap gap-10'>
